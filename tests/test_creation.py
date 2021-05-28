@@ -26,18 +26,14 @@ def no_curlies(filepath):
 class TestCookieSetup(object):
     def test_project_name(self):
         project = self.path
-        if pytest.param.get('project_name'):
-            name = system_check('DrivenData')
-            assert project.name == name
-        else:
-            assert project.name == 'project_name'
+        assert project.name == 'project_name'
 
     def test_author(self):
         setup_ = self.path / 'setup.py'
         args = ['python', str(setup_), '--author']
         p = check_output(args).decode('ascii').strip()
         if pytest.param.get('author_name'):
-            assert p == 'DrivenData'
+            assert p == 'author_name'
         else:
             assert p == 'Your name (or your organization/company/team)'
 
@@ -47,7 +43,7 @@ class TestCookieSetup(object):
         assert no_curlies(readme_path)
         if pytest.param.get('project_name'):
             with open(readme_path) as fin:
-                assert 'DrivenData' == next(fin).strip()
+                assert 'project_name' == next(fin).strip()
 
     def test_setup(self):
         setup_ = self.path / 'setup.py'
@@ -69,15 +65,6 @@ class TestCookieSetup(object):
         else:
             assert p == 'MIT'
 
-    def test_requirements(self):
-        reqs_path = self.path / 'requirements.txt'
-        assert reqs_path.exists()
-        assert no_curlies(reqs_path)
-        if pytest.param.get('python_interpreter'):
-            with open(reqs_path) as fin:
-                lines = list(map(lambda x: x.strip(), fin.readlines()))
-            assert 'pathlib2' in lines
-
     def test_makefile(self):
         makefile_path = self.path / 'Makefile'
         assert makefile_path.exists()
@@ -85,6 +72,9 @@ class TestCookieSetup(object):
 
     def test_folders(self):
         expected_dirs = [
+            'conf',
+            'conf/base',
+            'conf/local',
             'data',
             'data/external',
             'data/interim',
@@ -92,15 +82,20 @@ class TestCookieSetup(object):
             'data/raw',
             'docs',
             'models',
+            'models/model_outputs',
             'notebooks',
             'references',
             'reports',
             'reports/figures',
-            'src',
-            'src/data',
-            'src/features',
-            'src/models',
-            'src/visualization',
+            'tests',
+            'project_name',
+            'project_name/common',
+            'project_name/data',
+            'project_name/features',
+            'project_name/model_evaluation',
+            'project_name/modelling',
+            'project_name/reporting',
+            'project_name/visualization',
         ]
 
         ignored_dirs = [
