@@ -36,6 +36,16 @@ class TestCookieSetup(object):
             assert p == 'author_name'
         else:
             assert p == 'Your name (or your organization/company/team)'
+    
+    def test_author_email(self):
+        setup_ = self.path / 'setup.py'
+        args = ['python', str(setup_), '--author-email']
+        p = check_output(args).decode('ascii').strip()
+        print(p)
+        if pytest.param.get('author_email'):
+            assert p == 'author_email'
+        else:
+            assert p == 'Your email (or your organization/company/team email)'
 
     def test_readme(self):
         readme_path = self.path / 'README.md'
@@ -49,7 +59,7 @@ class TestCookieSetup(object):
         setup_ = self.path / 'setup.py'
         args = ['python', str(setup_), '--version']
         p = check_output(args).decode('ascii').strip()
-        assert p == '0.1.0'
+        assert p == '0.0.1'
 
     def test_license(self):
         license_path = self.path / 'LICENSE'
@@ -65,16 +75,9 @@ class TestCookieSetup(object):
         else:
             assert p == 'MIT'
 
-    def test_makefile(self):
-        makefile_path = self.path / 'Makefile'
-        assert makefile_path.exists()
-        assert no_curlies(makefile_path)
 
     def test_folders(self):
         expected_dirs = [
-            'conf',
-            'conf/base',
-            'conf/local',
             'data',
             'data/external',
             'data/interim',

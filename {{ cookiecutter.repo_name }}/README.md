@@ -36,7 +36,6 @@ The purpose of this project is ________. (Describe the main goals of the project
 ------------
 
     ├── LICENSE
-    ├── Makefile                     <- Makefile with commands like `make data` or `make train`
     ├── README.md                    <- The top-level README for developers using this project.
     ├── conf
     │   ├── base                     <- Space for shared configurations like parameters

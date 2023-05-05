@@ -1,0 +1,8 @@
+[run]
+include = {{ cookiecutter.repo_name }}/*
+concurrency = threading
+omit =
+    {{ cookiecutter.repo_name }}/get_pipeline_definition.py
+    {{ cookiecutter.repo_name }}/run_pipeline.py
+    {{ cookiecutter.repo_name }}/_utils.py
+timid = True
