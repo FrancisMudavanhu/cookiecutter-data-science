@@ -17,7 +17,7 @@ import argparse
 import sys
 import traceback
 
-from {{ cookiecutter.repo_name }}.common._pipeline_utils import get_pipeline_driver
+from src.common._pipeline_utils import get_pipeline_driver
 
 
 def main():  # pragma: no cover

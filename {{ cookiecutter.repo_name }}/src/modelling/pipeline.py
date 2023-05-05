@@ -13,7 +13,7 @@
 Implements a get_pipeline(**kwargs) method.
 """
 import os
-import {{cookiecutter.repo_name }}.common.config
+import src.common.config
 
 import boto3
 import sagemaker

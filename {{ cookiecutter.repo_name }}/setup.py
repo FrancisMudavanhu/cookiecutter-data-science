@@ -4,7 +4,7 @@ import setuptools
 
 about = {}
 here = os.path.abspath(os.path.dirname(__file__))
-with open(os.path.join(here, '{{ cookiecutter.repo_name }}', "__version__.py")) as f:
+with open(os.path.join(here, 'src', "__version__.py")) as f:
     exec(f.read(), about)
 
 
@@ -42,8 +42,8 @@ setuptools.setup(
     extras_require=extras,
     entry_points={
         "console_scripts": [
-            "get-pipeline-definition={{ cookiecutter.repo_name }}.get_pipeline_definition:main",
-            "run-pipeline={{ cookiecutter.repo_name }}.run_pipeline:main",
+            "get-pipeline-definition=src.get_pipeline_definition:main",
+            "run-pipeline=src.run_pipeline:main",
         ]
     },
     classifiers=[

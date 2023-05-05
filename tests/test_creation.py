@@ -91,14 +91,14 @@ class TestCookieSetup(object):
             'reports',
             'reports/figures',
             'tests',
-            'project_name',
-            'project_name/common',
-            'project_name/data',
-            'project_name/features',
-            'project_name/model_evaluation',
-            'project_name/modelling',
-            'project_name/reporting',
-            'project_name/visualization',
+            'src',
+            'src/common',
+            'src/data',
+            'src/features',
+            'src/model_evaluation',
+            'src/modelling',
+            'src/reporting',
+            'src/visualization',
         ]
 
         ignored_dirs = [

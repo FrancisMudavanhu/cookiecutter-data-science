@@ -37,9 +37,6 @@ The purpose of this project is ________. (Describe the main goals of the project
 
     ├── LICENSE
     ├── README.md                    <- The top-level README for developers using this project.
-    ├── conf
-    │   ├── base                     <- Space for shared configurations like parameters
-    │   └── local                    <- Space for local configurations, usually credentials
     │   
     ├── data
     │   ├── external                 <- Data from third party sources.
@@ -65,8 +62,8 @@ The purpose of this project is ________. (Describe the main goals of the project
     │                                      generated with `pip freeze > requirements.txt`
     │
     ├── setup.py                     <- makes project pip installable (pip install -e .) so src can be imported
-    ├── {{cookiecutter.project_name}}<- Source code for use in this project.
-│   ├── __init__.py                  <- Makes src a Python module
+    ├── src                          <- Source code for use in this project.
+    ├── __init__.py                  <- Makes src a Python module
     │   │   
     │   ├── common                   <-  Functions used across the project
     │   │
